@@ -1,40 +1,23 @@
 package orgMiJmeterSockjsSampler;
 
 public class ResponseMessage {
-	
-	private String message = "";
-	private long messageCounter = 0;
-	private String problems = "";
 
-	public String getMessage() {
-		return message;
-	}
+    private String message = "";
+    private String problems = "";
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	
-	public void addMessage(String message) {
-		this.message = (this.message != "") ? this.message + "\n" + message : message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public long getMessageCounter() {
-		return messageCounter;
-	}
+    public void addMessage(String message) {
+        this.message = (this.message.isEmpty() ? "" : this.message + "\n") + message;
+    }
 
-	public void setMessageCounter(long messageCounter) {
-		this.messageCounter = messageCounter;
-	}
+    public String getProblems() {
+        return problems;
+    }
 
-	public String getProblems() {
-		return problems;
-	}
-
-	public void addProblem(String problem) {
-		this.problems = (this.problems != "") ? this.problems + "\n" + problem : problem;
-	}
-	
-	public void setProblems(String problems) {
-		this.problems = problems;
-	}
+    public void addProblem(String problem) {
+        this.problems = (this.problems.isEmpty() ? "" : this.problems + "\n") + problem;
+    }
 }
